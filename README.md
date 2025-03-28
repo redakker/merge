@@ -59,6 +59,9 @@ Modify these variables at the beginning of the script to suit your needs.
 - **Conflict resolution helper**: The tool could suggest next steps when a conflict occurs.
 - **Better error handling**: More detailed explanations when a merge fails.
 
+## Notes
+- The branches in this repository have only one purpose: test this Branch Merge Tool
+
 ## Conclusion
 The Branch Merge Tool simplifies Git branch management by providing an intuitive, text-based graphical interface. It is ideal for developers who want to merge branches easily without typing complex Git commands.
 
