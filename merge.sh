@@ -83,14 +83,14 @@ while true; do
     # Perform the merge
     echo "Merging $SOURCE_BRANCH into $TARGET_BRANCH..."
 
-    # git checkout "$TARGET_BRANCH" || exit 1
-    # git switch "$TARGET_BRANCH" || exit 1  # Ensure branch switch
-    # git pull origin "$TARGET_BRANCH"
+    git checkout "$TARGET_BRANCH" || exit 1
+    git switch "$TARGET_BRANCH" || exit 1  # Ensure branch switch
+    git pull origin "$TARGET_BRANCH"
 
     git merge --no-ff "origin/$SOURCE_BRANCH" -m "$SOURCE_BRANCH is merged to $TARGET_BRANCH"
     if [ $? -ne 0 ]; then
         dialog --msgbox "Merge failed! Resolve conflicts manually." 10 40
-        # git merge --abort
+        git merge --abort
         continue
     fi
 
