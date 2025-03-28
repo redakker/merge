@@ -63,7 +63,7 @@ while true; do
     fi
 
     # Check if there are unpushed commits
-    if ! git diff --quiet @{u}; then
+    if ! git log --branches --not --remotes --quiet; then
         dialog --msgbox "There are unpushed commits! Push or discard them before proceeding." 10 50
         clear
         exit 1
@@ -94,9 +94,12 @@ while true; do
         continue
     fi
 
-    # git push origin "$TARGET_BRANCH"
-    dialog --msgbox "Merge completed successfully!" 10 40
-    clear
+    git push origin "$TARGET_BRANCH"
+    #dialog --msgbox "Merge completed successfully!" 10 40
+    echo "_____________________________"
+    echo "Merge completed successfully!"
+    echo ""
+    #clear
     exit 0
 
 done
