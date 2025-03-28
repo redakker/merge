@@ -62,6 +62,9 @@ Modify these variables at the beginning of the script to suit your needs.
 ## Notes
 - The branches in this repository have only one purpose: test this Branch Merge Tool
 
+## Versions
+- 1.0 - 2025.03.28
+
 ## Conclusion
 The Branch Merge Tool simplifies Git branch management by providing an intuitive, text-based graphical interface. It is ideal for developers who want to merge branches easily without typing complex Git commands.
 

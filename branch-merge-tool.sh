@@ -83,18 +83,20 @@ while true; do
     # Perform the merge
     echo "Merging $SOURCE_BRANCH into $TARGET_BRANCH..."
 
-    git checkout "$TARGET_BRANCH" || exit 1
-    git switch "$TARGET_BRANCH" || exit 1  # Ensure branch switch
-    git pull origin "$TARGET_BRANCH"
+    git -C "$FOLDER" fetch origin
+    git -C "$FOLDER" checkout "$TARGET_BRANCH" || exit 1
+    git -C "$FOLDER" switch "$TARGET_BRANCH" || exit 1  # Ensure branch switch
+    REMOTE=$(git -C "$FOLDER" remote | head -n 1)
+    git -C "$FOLDER" pull "$REMOTE" "$TARGET_BRANCH"
 
-    git merge --no-ff "origin/$SOURCE_BRANCH" -m "$SOURCE_BRANCH is merged to $TARGET_BRANCH"
+    git -C "$FOLDER" merge --no-ff "origin/$SOURCE_BRANCH" -m "$SOURCE_BRANCH is merged to $TARGET_BRANCH"
     if [ $? -ne 0 ]; then
         dialog --msgbox "Merge failed! Resolve conflicts manually." 10 40
         git merge --abort
         continue
     fi
 
-    git push origin "$TARGET_BRANCH"
+    git -C "$FOLDER" push origin "$TARGET_BRANCH"
     #dialog --msgbox "Merge completed successfully!" 10 40
     echo "_____________________________"
     echo "Merge completed successfully!"
