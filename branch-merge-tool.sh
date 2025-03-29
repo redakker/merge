@@ -5,7 +5,8 @@ FROMFILTER=""
 TOFILTER=""
 
 # Configuration: Repository folder (absolute path)
-FOLDER=""
+# Use "." for the current directory, do not leave it empty
+FOLDER="."
 
 # Ensure dialog is installed
 if ! command -v dialog &> /dev/null; then
