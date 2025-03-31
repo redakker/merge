@@ -3,6 +3,8 @@
 ## Introduction
 The **Branch Merge Tool** is a user-friendly command-line utility that simplifies the process of merging Git branches. It provides a graphical interface within the terminal, making it easier for users to select and merge branches without needing to manually type Git commands.
 
+![plot](./screenshot/tool.png)
+
 ## Purpose
 Merging branches in Git can be a complex and error-prone process, especially for users unfamiliar with Git’s command-line operations. This tool provides:
 - A **graphical user interface** (via `dialog`) for selecting branches.
@@ -81,4 +83,3 @@ By using this software, you acknowledge and agree that:
 - The software may receive updates, but there is **no obligation** for continued maintenance or support.
 
 By proceeding with the installation or usage of this software, you **accept full responsibility** for any outcomes. If you do not agree with these terms, please refrain from using it.
-
