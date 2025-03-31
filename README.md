@@ -65,6 +65,19 @@ Modify these variables at the beginning of the script to suit your needs.
 ## Versions
 - 1.0 - 2025.03.28
 
+## Usage Responsibility
+
+By using this software, you acknowledge and agree that:
+
+- This software is provided **as is**, without any guarantees or warranties, express or implied.
+- The developers are **not responsible** for any data loss, security breaches, or unintended consequences resulting from its use.
+- It is **your responsibility** to ensure that the software is configured and used in a way that complies with applicable laws, regulations, and best practices.
+- Any **modifications, integrations, or usage in critical environments** should be thoroughly tested by you before deployment.
+- The software may receive updates, but there is **no obligation** for continued maintenance or support.
+
+By proceeding with the installation or usage of this software, you **accept full responsibility** for any outcomes. If you do not agree with these terms, please refrain from using it.
+
+
 ## Conclusion
 The Branch Merge Tool simplifies Git branch management by providing an intuitive, text-based graphical interface. It is ideal for developers who want to merge branches easily without typing complex Git commands.
 
