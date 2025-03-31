@@ -21,7 +21,7 @@ fi
 
 while true; do
     # Get the list of remote branches
-    repos=($(git branch -r | grep -v '\->' | sed 's/origin\///' | sort -u))
+    repos=($(git -C "$FOLDER" branch -r | grep -v '\->' | sed 's/origin\///' | sort -u))
 
     if [ ${#repos[@]} -lt 2 ]; then
         echo "At least two branches are needed for merging."
@@ -57,14 +57,14 @@ while true; do
     fi
 
     # Check if working directory is clean
-    if ! git diff --quiet || ! git diff --cached --quiet; then
+    if ! git -C "$FOLDER" diff --quiet || ! git -C "$FOLDER" diff --cached --quiet; then
         dialog --msgbox "Working directory is not clean! Commit or stash changes before proceeding." 10 50
         clear
         exit 1
     fi
 
     # Check if there are unpushed commits
-    if ! git log --branches --not --remotes --quiet; then
+    if ! git -C "$FOLDER" log --branches --not --remotes --quiet; then
         dialog --msgbox "There are unpushed commits! Push or discard them before proceeding." 10 50
         clear
         exit 1
