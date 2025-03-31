@@ -65,6 +65,11 @@ Modify these variables at the beginning of the script to suit your needs.
 ## Versions
 - 1.0 - 2025.03.28
 
+## Conclusion
+The Branch Merge Tool simplifies Git branch management by providing an intuitive, text-based graphical interface. It is ideal for developers who want to merge branches easily without typing complex Git commands.
+
+If you have suggestions for improvements, feel free to contribute!
+
 ## Usage Responsibility
 
 By using this software, you acknowledge and agree that:
@@ -77,8 +82,3 @@ By using this software, you acknowledge and agree that:
 
 By proceeding with the installation or usage of this software, you **accept full responsibility** for any outcomes. If you do not agree with these terms, please refrain from using it.
 
-
-## Conclusion
-The Branch Merge Tool simplifies Git branch management by providing an intuitive, text-based graphical interface. It is ideal for developers who want to merge branches easily without typing complex Git commands.
-
-If you have suggestions for improvements, feel free to contribute!
