@@ -64,10 +64,11 @@ while true; do
     fi
 
     # Check if there are unpushed commits
-    if ! git -C "$FOLDER" log --branches --not --remotes --quiet; then
-        dialog --msgbox "There are unpushed commits! Push or discard them before proceeding." 10 50
-        clear
-        exit 1
+    if ! git -C "$FOLDER" log origin/"$TARGET_BRANCH".."$TARGET_BRANCH" --quiet || \
+        ! git -C "$FOLDER" log origin/"$SOURCE_BRANCH".."$SOURCE_BRANCH" --quiet; then
+            dialog --msgbox "There are unpushed commits in the selected branches! Push or discard them before proceeding." 10 50
+            clear
+            exit 1
     fi
 
     # Confirm the merge decision
