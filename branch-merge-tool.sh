@@ -42,7 +42,11 @@ select_package_branches() {
     local prefix="$1"
 
     # Get all package branches
-    local package_branches=($(git -C "$FOLDER" branch -r | grep "origin/${prefix}" | sed 's/origin\///' | sort))
+    # Replace the mapfile line with this:
+    local package_branches=()
+    while read -r branch; do
+        package_branches+=("$branch")
+    done < <(git -C "$FOLDER" branch -r | grep "origin/${prefix}" | sed 's/origin\///' | sort)
 
     if [ ${#package_branches[@]} -eq 0 ]; then
         dialog --msgbox "No branches found with prefix '${prefix}'!" 8 50
