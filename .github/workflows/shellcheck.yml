@@ -1,0 +1,26 @@
+name: ShellCheck
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  shellcheck:
+    name: ShellCheck
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install ShellCheck
+        run: sudo apt-get install -y shellcheck
+
+      - name: Run ShellCheck
+        run: shellcheck *.sh
+
+      - name: Check branch-merge-tool script
+        run: |
+          if [ -f branch-merge-tool ]; then
+            shellcheck branch-merge-tool
+          fi
