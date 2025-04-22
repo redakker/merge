@@ -34,21 +34,6 @@ Modify these variables at the beginning of the script to suit your needs.
    ```bash
    chmod +x branch-merge-tool.sh
    ```
-3. add the script to your PATH:
-   ```bash
-   # Create a bin directory in your home folder if it doesn't exist
-   mkdir -p ~/bin
-
-   # Copy the script to your bin directory
-   cp branch-merge-tool.sh ~/bin/branch-merge-tool
-
-   # Add ~/bin to your PATH if it's not already there
-   echo 'export PATH="$HOME/bin:$PATH"' >> ~/.zshrc  # or ~/.bash_profile for Bash
-
-   # Reload your shell configuration
-   source ~/.zshrc  # or ~/.bash_profile for Bash
-   ```
-
 3. Run the script:
    ```bash
    ./branch-merge-tool.sh
